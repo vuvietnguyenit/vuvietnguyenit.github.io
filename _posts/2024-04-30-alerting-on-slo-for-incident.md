@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SLO Alert rule for detect incident
-subtitle: Why SREs using SLO burn rate for detect incident
+subtitle: Why SREs using SLO burn rate for detect incident ?
 tags: [sre, slo]
 comments: true
 mathjax: true
@@ -9,7 +9,7 @@ author: VuNguyen
 ---
 
 
-Using SLO (Service-Level Objective) for determine issue about Reliability of system is good choice that's today system using for estimate ability "Serve enduser good enough" or "Detect issues about healthy of system" under view of Engineer. Maybe SLO not bring much value when system is operating stably or in other words "stasifying user" the way we see it from "surface". However, for evaluate more accurate something what we see requires accurate statistic and from this we can evaluate "quality" system more exactly. 
+Using SLO (Service-Level Objective) for determine issue about Reliability of system is good choice that's today system using for estimate ability "Serve enduser good enough" or "Detect issues about healthy of system" under view of Engineer. Maybe SLO not bring much value when system is operating stably or in other words "stasifying user" the way we see it from "surface". However, for evaluate more accurate something what we see requires accurate statistic and from this we can evaluate "quality" system more exactly.
 So, SREs (Site-Reliability Engineer) using SLO for determine "threshold" that they think it serve enduser "good enough"
 
 There is no problem when system running stably like something we hope. This will be more difficult when system extend over time. At this time, complexity will be linear increase with risk that the system will meet. Identify problems before it happen help SREs have better strategy for response, so target will focus to metrics around SLO.
@@ -52,7 +52,7 @@ How evaluate and alert periodically is the question arises now, the following pl
 
 ## Solution for identify burn rate
 
-Following idea we discussed above. Let go to a specific example as follow: 
+Following idea we discussed above. Let go to a specific example as follow:
 
 "Determine that the system is looking for a problem worth paying attention to when the amount of EB consumed in 1 hour is greater than 5%"
 
@@ -79,7 +79,7 @@ ER[1h] < 33.6 x (1 - SLO) = 33.6 x (EB) = 33.6 x 0.1% = 0.036 (error rate per ho
 
 This is ER threshold allowed for time window = 1h in a SLO cycle evaluate with 28 days. We can see with each time calculate ER, ER amount will be allowed < 33.6 times EB we defined
 
-*remind: EB = (1 - SLO)_
+_remind: EB = (1 - SLO)_
 
 However, there is one problem occur:
 
@@ -94,7 +94,8 @@ _As recommended. We could use **short time window = 1/12 long time window** with
 Therefore, it is recommended to add an evaluation condition for a short time window to help detect problems make burn significantly EB.
 
 **Rule config:**
-```
+
+```text
 -> expr: 
 ER[1h] < 33.6 
 OR 

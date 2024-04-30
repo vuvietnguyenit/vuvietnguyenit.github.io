@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Analyze and build model identify value Nth-percent
-subtitle: How Promtheus rate(), histogram_quantile() functions work ? What is Linear Interpolation 
+subtitle: How Promtheus rate(), histogram_quantile() functions work ? What is Linear Interpolation ?
 tags: [sre, slo]
 comments: true
 mathjax: true
