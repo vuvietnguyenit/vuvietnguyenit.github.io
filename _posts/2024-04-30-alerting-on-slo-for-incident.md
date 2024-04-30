@@ -40,7 +40,7 @@ If our system running stably like something we hope, then after 28 days, 100% EB
 
 At this time, we can show charts corresponding between time window and burn rate (with time_window = 30 days in bellow image)
 
-![burn rate and days](assets/img/burnrate_and_days.png)
+![alt text](image.png)
   
 SLO target is set will be considered passed if in time window, amount EB not "exhausted" earlier. This idea base on EB amount consumed corresponding with (BR) in "perfect case" for estimate system health could be worse.
 
@@ -87,7 +87,7 @@ However, there is one problem occur:
 
 This is overcome by using an additional short time window to detect problems that occur briefly but cause significant to the EB and this require quick response. Additionally, the short window time helps ensure that the chart recovers quickly when the problem is resolved.
 
-![rolling-window](image-2.png)
+![rolling-window](image-1.png)
 
 _As recommended. We could use **short time window = 1/12 long time window** with the same burn rate._
 
