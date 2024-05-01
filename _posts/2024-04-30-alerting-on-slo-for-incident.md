@@ -34,7 +34,7 @@ This is request ratio that system **Allow handle error** in 28d time window. If 
 
 _Let's say within 28 days, we have total 1 million requests received. According to target we have set, the system **will only be allowed for handle failed 1000 requests** and **999,000 requests remaining will have to be be handle successful**_
 
-If our system running stably like something we hope, then after 28 days, 100% EB will be exhausted (corresponding with BR = 0% after 28 days). This means the same thing about **Burn rate = 1**. This case called "perfect case"
+If our system running stably like something we hope, then after 28 days, 100% EB will be exhausted (corresponding with EB = 0% after 28 days). This means the same thing about **Burn rate = 1**. This case called "perfect case"
 
 -> When outages occur with system, suppose we calculate and determine that this will exhausted 100% EB after the 14th days (1/2 time_window) -> **Burn rate = 2** (EB burn fast double -> This mean we will have problems with double risk).
 
