@@ -1,7 +1,7 @@
 ---
 layout: post
-title: SLO Alert rule for detect and alert incident
-subtitle: Why SREs using SLO burn rate for detect and alert incident ?
+title: SLO Alert for detect and alert service state
+subtitle: Why SREs using SLO Burn Rate for monitoring service state and detect incidents ?
 tags: [sre, slo]
 comments: true
 mathjax: true
