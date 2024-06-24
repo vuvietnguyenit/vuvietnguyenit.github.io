@@ -1,7 +1,7 @@
 ---
 layout: post
-title: SLO Alert rule for detect incident
-subtitle: Why SREs using SLO burn rate for detect incident ?
+title: SLO Alert rule for detect and alert incident
+subtitle: Why SREs using SLO burn rate for detect and alert incident ?
 tags: [sre, slo]
 comments: true
 mathjax: true
@@ -27,7 +27,7 @@ _**What does this mean ?**_
 Example, we have a cycle for evaluate SLO is 28 days (time_window=28d) and SLO threshold defined is 99.9% (SLO = 0.999) requests received will be handle successful by the server.
 
 ```text
--> EB = 1 - 0.999 = 0.001
+-> EB = 1 - SLO = 1 - 0.999 = 0.001
 ```
 
 This is request ratio that system **Allow handle error** in 28d time window. If exceed, "mission fail" (Did not reach the goal).
@@ -52,38 +52,68 @@ How evaluate and alert periodically is the question arises now, the following pl
 
 ## Solution for identify burn rate
 
+With 100% SLO (SLO = 1) in 28d corresponding 672h system up (always up and not include any incidents in 672h). However, this story is completely unfeasible because any system or service will have downtime when we deploy new feature, resolve incidents. So, SLO we set require will be smaller than 100%
+
+As mentioned above, we have set SLO = 0.999 (99.9%) in 28 days period, this equivalent to:
+
+```text
+28 * 24 * 0.999 = 671.328h uptime => allow 0.672h (~ 40.32 minutes) downtime in 28 days period.
+
+```
+
+=> Error Budget (EB) = 0.001 (0.1%) <=> 40.32 minutes in 28 days, that means in 28 days period we only have 40.32 minutes downtime.
+
+We had been identify EB, next we can define threshold EB consumed to determine problems system or service.
+
 Following idea we discussed above. Let go to a specific example as follow:
 
-"Determine that the system is looking for a problem worth paying attention to when the amount of EB consumed in 1 hour is greater than 5%"
+"Determine that the system is looking for a problem worth paying attention to when the amount of EB consumed in 1 hour time window is greater than 5%"
 
 _Analysis:_
 
-We have fully Error budget (EB) in 1 cycle 28 days (672 hours). Following perfect case, 100% EB will be use "all" in 672h
--> Avg in 1 hour we allow maximum use
+We have fully Error budget (EB) in 1 cycle 28 days = (40.32 minutes). Following perfect case, avg a hour we allow maximum use:
 
 ```text
-(1/672) x 100% EB = 0.1488% 
+40.32 * 28 * 24 = 0.06 minutes (~3.6 seconds) downtime <=> 0.1488% EB/hour
 ```
 
-**So, threshold with value > 5% EB is fit for alert.**
+**So, we can try to set threshold with value > 5% EB (~2 minutes) to firing an alert.**
 
-100% EB corresponding with 672h. At this point, we need define the downtime range so that the service does not impact the previously defined SLO.
+100% EB corresponding with ~ 40m. At this point, we need define the downtime range so that the service does not impact the previously defined SLO.
 
-For 5% EB -> The service allowed incident occured in **33.6h (33h + 3/5h) in range 28 days**
+With 5% EB per hour -> We can calculate burn rate:
 
-So, in 1h, error budget amount allowed for consumed (corresponding with ER accepted in 1h) is:
+$BR = \dfrac{P \times EBc}{tw}$
+
+With:
+
+- BR: Burn rate.
+- EBc: Error budget consumed.
+- P: Period for SLO eval.
+- tw: Time window. In this case, tw = 1h.
+
+From there, we calulate burn rate limit with 5% EB consumed per hour and we can configurate alerting rule by Burn rate:
+
+$BR = \dfrac{28 \times 24 \times 0.05}{1} = 33.6$
+
+**Rule config:**
 
 ```text
-ER[1h] < 33.6 x (1 - SLO) = 33.6 x (EB) = 33.6 x 0.1% = 0.036 (error rate per hour)
+expr: 
+ErrorRate[1h] < 33.6 
 ```
-
-This is ER threshold allowed for time window = 1h in a SLO cycle evaluate with 28 days. We can see with each time calculate ER, ER amount will be allowed < 33.6 times EB we defined
-
-_remind: EB = (1 - SLO)_
 
 However, there is one problem occur:
 
-**x 33.6 times EB** in 1 hour is fit for give decision service occuring problems make consumes EB significantly compare to EB we set. But, if EB consumed < 33.6 times little a bit, there won't be any alert (for example ER = 33 times EB) athough it "burn" 100% EB in 20.3 h.
+**x 33.6 times EB** in 1 hour is fit for give decision service occuring problems make consumes EB significantly compare to EB we set. But, if EB consumed < 33.6 times little a bit, there won't be any alert (for example ER = 33 times EB) athough it "burn" 100% EB in 20.3h*.
+
+_With BR = 33. We calculated Error Budget consumed:_
+
+$EBc = \dfrac{BR \times tw}{P} = \dfrac{33 \times 1h}{28 \times 24} = 0.049$
+
+_And then, we have time to consume all budget:_
+
+$TimeToConsumeAllBudget = \dfrac{1 \times tw}{EBc} = \dfrac{1 \times 1h}{0.049} = 20.3h$
 
 This is overcome by using an additional short time window to detect problems that occur briefly but cause significant to the EB and this require quick response. Additionally, the short window time helps ensure that the chart recovers quickly when the problem is resolved.
 
@@ -96,10 +126,10 @@ Therefore, it is recommended to add an evaluation condition for a short time win
 **Rule config:**
 
 ```text
--> expr: 
+expr: 
 ER[1h] < 33.6 
 OR 
-ER[1/12 of 1h = 5m] < 33.6
+ER[5m] < 33.6
 ```
 
 From there, we can see the use of **long time window** to identify the risks of EB consumption in the future to have plans or solutions to overcome when that situation continues in the coming days while **short time window** is used to detect problems that have a significant impact on the system and need to be resolved as soon as possible.
