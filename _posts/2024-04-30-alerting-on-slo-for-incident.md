@@ -113,7 +113,7 @@ $EBc = \dfrac{BR \times tw}{P} = \dfrac{33 \times 1h}{28 \times 24} = 0.049$
 
 _And then, we have time to consume all budget:_
 
-$TimeToConsumeAllBudget = \dfrac{1 \times tw}{EBc} = \dfrac{1 \times 1h}{0.049} = 20.3h$
+$T = \dfrac{1 \times tw}{EBc} = \dfrac{1 \times 1h}{0.049} = 20.3h$
 
 This is overcome by using an additional short time window to detect problems that occur briefly but cause significant to the EB and this require quick response. Additionally, the short window time helps ensure that the chart recovers quickly when the problem is resolved.
 
