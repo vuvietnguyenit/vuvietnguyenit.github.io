@@ -62,7 +62,7 @@ The groups of data points allocated per time window are represented as shown abo
 Error rate aggregate phase:
 
 ----------------------------------------------------------------------------------------
-	n  |  chunks  |   time range   |  total event  |   bad event    |    error rate    |
+    n  |  chunks  |   time range   |  total event  |   bad event    |    error rate    |
 ---------------------------------------------------------------------------------------
   (1)  |  	C1    |  	0m -> 5m   |      7    	   |    	3       |      	0.42       |
   (2)  |  	C2    |  	5m -> 10m  |      7    	   |    	1       |      	0.14       |
@@ -95,7 +95,7 @@ Applying this calculation method allows us to deduce EB(consumed) and EBR at sub
 Error rate aggregate phase:
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-	n  |  chunks  |   time range   |  total event  |   bad event    |    error rate    |	EB consumed (by minutes)	|	   	EBR (by hours)		  |
+    n  |  chunks  |   time range   |  total event  |   bad event    |    error rate    |	EB consumed (by minutes)	|	   	EBR (by hours)		  |
 -------------------------------------------------------------------------------------------------------------------------------------------------------
   (1)  |  	C1    |  	0m -> 5m   |      7    	   |    	3       |      	0.42       |			 2.1				|			 6.685			  |
   (2)  |  	C2    |  	5m -> 10m  |      7    	   |    	1       |      	0.14       |			 0.7				|			 6.673			  |
