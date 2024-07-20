@@ -37,17 +37,17 @@ To address this issue, simply ensure that the interval between evaluations is >=
 ```
  *+**+*+ ****+** +*+*++* ****+
 |-------|-------|-------|---->
-0m     5m      10m     15m	...
+0m     5m      10m     15m  ...
        (1)     (2)     (3)
-		^    	^    	^
-		|    	|    	|
+        ^       ^       ^
+        |       |       |
 ---(G1)-+--(G2)-+--(G3)--
-				|
-				v
-	  ______________________
-	 |                      |
-	 | Error rate aggregate |
-	 |______________________|
+                |
+                v
+      ______________________
+     |                      |
+     | Error rate aggregate |
+     |______________________|
 
 Legend:
   tw: time window (= 5m)
@@ -62,11 +62,11 @@ The groups of data points allocated per time window are represented as shown abo
 Error rate aggregate phase:
 
 ----------------------------------------------------------------------------------------
-   n   |  chunks  |   time range   |  total event  |   bad event    |    error rate    |
+|   n   |  chunks  |   time range   |  total event  |   bad event    |    error rate    |
 ---------------------------------------------------------------------------------------
-  (1)  |    C1    |     0m -> 5m   |      7        |        3       |       0.42       |
-  (2)  |    C2    |     5m -> 10m  |      7        |        1       |       0.14       |
-  (3)  |    C1    |     10m -> 15m |      7        |        4       |       0.57       |
+|  (1)  |    C1    |     0m -> 5m   |      7        |        3       |       0.42       |
+|  (2)  |    C2    |     5m -> 10m  |      7        |        1       |       0.14       |
+|  (3)  |    C1    |     10m -> 15m |      7        |        4       |       0.57       |
 ========================================================================================
 ```
 The example simulates events that are evenly distributed across time segments, but reality will be different. However, the way to aggregate ER is completely similar.
@@ -95,10 +95,10 @@ Applying this calculation method allows us to deduce EB(consumed) and EBR at sub
 Error rate aggregate phase:
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-    n  |  chunks  |   time range   |  total event  |   bad event    |    error rate    |	EB consumed (by minutes)	|	   	EBR (by hours)		  |
+|   n   |  chunks  |   time range   |  total event   |   bad event    |    error rate    |   EB consumed (by minutes)   |      EBR (by hours)         |
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-  (1)  |  	C1    |  	0m -> 5m   |      7    	   |    	3       |      	0.42       |			 2.1				|			 6.685			  |
-  (2)  |  	C2    |  	5m -> 10m  |      7    	   |    	1       |      	0.14       |			 0.7				|			 6.673			  |
-  (3)  |  	C3    |  	10m -> 15m |      7    	   |    	4       |      	0.57       |			 2.85 				|			 6.6255			  |
+|  (1)  |    C1    |    0m -> 5m    |       7        |        3       |       0.42       |           2.1                |             6.685           |
+|  (2)  |    C2    |    5m -> 10m   |       7        |        1       |       0.14       |           0.7                |             6.673           |
+|  (3)  |    C3    |    10m -> 15m  |       7        |        4       |       0.57       |           2.85               |             6.6255          |
 =======================================================================================================================================================
 ```
