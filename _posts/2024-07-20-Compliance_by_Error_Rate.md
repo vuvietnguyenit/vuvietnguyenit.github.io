@@ -62,11 +62,11 @@ The groups of data points allocated per time window are represented as shown abo
 Error rate aggregate phase:
 
 ----------------------------------------------------------------------------------------
-    n  |  chunks  |   time range   |  total event  |   bad event    |    error rate    |
+   n   |  chunks  |   time range   |  total event  |   bad event    |    error rate    |
 ---------------------------------------------------------------------------------------
-  (1)  |  	C1    |  	0m -> 5m   |      7    	   |    	3       |      	0.42       |
-  (2)  |  	C2    |  	5m -> 10m  |      7    	   |    	1       |      	0.14       |
-  (3)  |  	C3    |  	10m -> 15m |      7    	   |    	4       |      	0.57       |
+  (1)  |    C1    |     0m -> 5m   |      7        |        3       |       0.42       |
+  (2)  |    C2    |     5m -> 10m  |      7        |        1       |       0.14       |
+  (3)  |    C1    |     10m -> 15m |      7        |        4       |       0.57       |
 ========================================================================================
 ```
 The example simulates events that are evenly distributed across time segments, but reality will be different. However, the way to aggregate ER is completely similar.
