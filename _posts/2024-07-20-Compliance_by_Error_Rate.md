@@ -17,7 +17,7 @@ _Example:_**** Up to the current time (T = 15m), 21 events corresponding to data
 ```
  *+**+*+ ****+** +*+*++* ****+
 |---------------------------->
-0m              			15m
+0m                          15m
 
 (*) represents a good event
 (+) represents a bad event.
