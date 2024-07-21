@@ -32,6 +32,8 @@ When evaluating the Error Rate (ER), it's important to assess it over time windo
 ```
 Overlap can occur in data points when assessing with smaller time windows using a rolling-window mechanism.
 
+![rolling-window](/assets/img/rolling-window.png)
+
 To address this issue, simply ensure that the interval between evaluations is >= time_window. However, this will increase the detection time because interval will equivalent to time to return evaluation result. Thus, a higher interval will result in longer detection times.
 
 ```
