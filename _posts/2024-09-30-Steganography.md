@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Steganography
-subtitle: Mật mã được sử dụng rất nhiều trong môi trường khắc nghiệt như deepweb để trao đổi những thông tin bất hợp pháp giúp có thêm cơ hội để "qua mặt" những tổ chức An ninh mạng chính phủ. Steganography là một kỹ thuật mà các Forensic Investigators luôn lưu ý và sử dụng nhiều trong các cuộc điều tra kỹ thuật số (Digital Forensics) 
+subtitle: Steganography là một kỹ thuật mà các Forensic Investigators luôn lưu ý và sử dụng nhiều trong các cuộc điều tra kỹ thuật số (Digital Forensics) để truy vết những thông tin bí mật được ẩn trong file.
 tags: [steganography, cybersecurity, forensics]
 comments: true
 mathjax: true
@@ -9,7 +9,7 @@ author: VuNguyen
 ---
 
 Trong mật mã học, Steganography là một cách biểu diễn thông tin để khó bị phát hiện bởi con người.
-Trong thực tế, phương pháp này thường được dùng để ẩn thông tin bí mật trong một file khi truyền tải. Thông tin bí mật có thể là một file khác hoặc đơn thuần là một file text có chưa nội dung bí mật. Đây có thể là một trong những cách để “đánh lạc hướng” trong các cuộc điều tra kỹ thuật số (Digital Forensics) vì “những cái thực sự thấy chỉ là phần nổi của tảng băng chìm".
+Trong thực tế, phương pháp này thường được dùng để ẩn thông tin bí mật trong một file khi truyền tải, nó được sử dụng rất nhiều trong môi trường khắc nghiệt như **Deepweb** để trao đổi những thông tin bất hợp pháp giúp có thêm cơ hội để giảm thiểu khả năng bị phát hiện bởi những tổ chức An ninh mạng chính phủ. Thông tin bí mật có thể là một file khác hoặc đơn thuần là một file text có chưa nội dung bí mật. Đây có thể là một trong những cách để “đánh lạc hướng” trong các cuộc điều tra kỹ thuật số (Digital Forensics) vì “những cái thực sự thấy chỉ là phần nổi của tảng băng chìm".
 
 ### Forensics
 
