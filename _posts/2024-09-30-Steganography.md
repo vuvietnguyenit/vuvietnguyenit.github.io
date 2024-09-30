@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Steganography
-subtitle: Làm thế nào để trích xuất thông tin bí mật từ file.
+subtitle: Dữ liệu được che giấu trong quá trình truyền tải được sử dụng rất nhiều trong môi trường khắc nghiệt như deepweb để trao đổi những thông tin bất hợp pháp giúp có thêm cơ hội để "qua mặt" những tổ chức An ninh mạng chính phủ. Steganography là một kỹ thuật cần đáng lưu ý và sử dụng nhiều trong các cuộc điều tra kỹ thuật số (Digital Forensics) 
 tags: [steganography, cybersecurity, forensics]
 comments: true
 mathjax: true
@@ -15,7 +15,7 @@ Trong thực tế, phương pháp này thường được dùng để ẩn thôn
 
 *Để dễ hình dung, hãy đi vào xem xét một ví dụ sau:*
 
-Giả sử một nhóm tội phạm mạng đang thực hiện buôn bán bất hợp pháp trên internet nhưng họ muốn bằng một cách nào đó đánh lạc hướng các điều tra viên nên đã “bẻ lái” câu chuyện thành một cuộc thảo luận về UFO. Trong câu chuyện có bình luận những hình ảnh liên quan đến những alien “rất cute” chẳng hạn như:
+Giả sử một nhóm cybercrime đang thực hiện buôn bán bất hợp pháp trên internet nhưng họ muốn bằng một cách nào đó đánh lạc hướng các điều tra viên nên đã “bẻ lái” câu chuyện thành một cuộc thảo luận về UFO. Trong câu chuyện có bình luận những hình ảnh liên quan đến những alien “rất cute” chẳng hạn như:
 
 ![image.png](/assets/img/image_steganography.png)
 
@@ -232,4 +232,4 @@ Agent R
 
 ```
 
-Done, sẽ khá là bất ngờ khi lần đầu tiên bạn khám phá được cách nhúng thông tin bí mật vào một file khác. Hầu hết các file đều có thể nhúng những thông tin bí mật khác vào chúng. Quan trọng là trong quá trình truyền tải, các dữ liệu đó có phải là những dữ liệu vi phạm tính chất về cộng đồng hay những nội dung độc hại được các mạng xã hội detect được và xóa nó đi hay không, còn việc nhúng thông tin bí mật vào file khá dễ dàng. Vì vậy, các tội phạm thường sẽ sử dụng những mạng xã hội lỏng lẻo trong tính bảo mật để thuận lợi trong việc trao đổi thông tin bất hợp pháp.
+Done, sẽ khá là bất ngờ khi lần đầu tiên bạn khám phá được cách nhúng thông tin bí mật vào một file khác. Hầu hết các file đều có thể nhúng những thông tin bí mật khác vào chúng. Quan trọng là trong quá trình truyền tải, các dữ liệu đó có phải là những dữ liệu vi phạm tính chất về cộng đồng hay những nội dung độc hại được các mạng xã hội detect được và xóa nó đi hay không, còn việc nhúng thông tin bí mật vào file khá dễ dàng. Vì vậy, cybercrimes thường sẽ sử dụng những mạng xã hội lỏng lẻo trong tính bảo mật để thuận lợi trong việc trao đổi thông tin bất hợp pháp.
