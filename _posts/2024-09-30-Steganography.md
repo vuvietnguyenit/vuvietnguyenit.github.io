@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Steganography
-subtitle: Dữ liệu được che giấu trong quá trình truyền tải được sử dụng rất nhiều trong môi trường khắc nghiệt như deepweb để trao đổi những thông tin bất hợp pháp giúp có thêm cơ hội để "qua mặt" những tổ chức An ninh mạng chính phủ. Steganography là một kỹ thuật cần đáng lưu ý và sử dụng nhiều trong các cuộc điều tra kỹ thuật số (Digital Forensics) 
+subtitle: Mật mã được sử dụng rất nhiều trong môi trường khắc nghiệt như deepweb để trao đổi những thông tin bất hợp pháp giúp có thêm cơ hội để "qua mặt" những tổ chức An ninh mạng chính phủ. Steganography là một kỹ thuật mà các Forensic Investigators luôn lưu ý và sử dụng nhiều trong các cuộc điều tra kỹ thuật số (Digital Forensics) 
 tags: [steganography, cybersecurity, forensics]
 comments: true
 mathjax: true
