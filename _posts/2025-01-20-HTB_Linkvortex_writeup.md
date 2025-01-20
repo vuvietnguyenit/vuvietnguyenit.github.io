@@ -10,7 +10,7 @@ author: VuNguyen
 
 Đây là dạng [Jeopardy CTF: Problem Solving](https://ctf-wiki.org/en/introduction/mode/#jeopardy-problem-solving) CTF. Room này phù hợp với những người đang làm hoặc có định hướng theo Redteam hoặc Pentest với các skill bao gồm: Recon, Web-Exploitation, Git Exposed Exploit, Shell script,...
 
-Room này tôi mất khoảng 2 ngày (8h để có thể suy nghĩ và exploit được nó) mà k cần đọc bất cứ writeup nào. Vì mỗi lần khó khăn đi đọc writeup, tôi cảm thấy như tôi đang tự xúc phạm và hạ thấp kiến thức của chính bản thân mình :).
+Room này tôi mất khoảng 2 ngày (8h để có thể suy nghĩ và exploit được nó) mà k cần đọc bất cứ writeup nào. Vì mỗi lần khó khăn đi đọc writeup, tôi cảm thấy như tôi đang tự xúc phạm và hạ thấp kiến thức của chính bản thân mình, tôi thấy không thỏa đáng khi làm điều này :).
 Nên tôi đành pause và nghiên cứu, chấp nhận tốn thời gian chứ k phải đi đường tắt.
 Link room: https://app.hackthebox.com/machines/LinkVortex
 
