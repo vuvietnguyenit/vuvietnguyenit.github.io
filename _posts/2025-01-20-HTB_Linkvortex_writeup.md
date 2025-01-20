@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Fuck hacker content.
-subtitle: DCM
+title: Fucking shit cái hacking challenge củ b` này đã làm đầu óc tôi bận rộn 2 ngày cuối tuần vừa rồi.
+subtitle: DCM :)), nếu bạn đã từng thử, chắc hẳn bạn sẽ bị nghiện khi thử mấy cái CTF challenge kiểu này. Btw, tôi mong bạn nên dành thời gian để tận hưởng cuộc sống, nấu ăn hay chơi thể thao hay thậm chí tận hưởng thời gian cuối tuần tuyệt vời với cô nàng của bạn chứ k phải dành thời gian cho cái thứ chết tiệt này. Rất may tôi vẫn còn có một giấc ngủ ngon và không mơ về nó. 
 tags: [ctf, cybersecurity, exploit]
 author: VuNguyen
 ---
