@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kick Your Ass, Monorepo Mindset!
-subtitle: Nay đọc được một bài viết làm bản thân thấy phí tiền mạng internet vì ước gì nay mình không đi làm để được đọc nó. Thực sự thì việc viết và show-off một cái gì đấy luôn luôn dễ hơn nhiều việc đem đến một kiến thức chính xác đến tất cả mọi người.  
+subtitle: Nay đọc được một bài viết làm bản thân thấy phí tiền mạng internet vì ước gì nay mình không đi làm để được đọc nó. Thực sự thì việc viết và show-off một cái gì đấy luôn luôn dễ hơn nhiều việc đem đến một điều có ích đến tất cả mọi người.  
 tags: [sre, system, design-structure]
 author: VuNguyen
 ---
