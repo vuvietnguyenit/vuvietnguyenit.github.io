@@ -2,7 +2,7 @@
 layout: post
 title: Memoir of June 12, 2025
 subtitle: Goddamn MS Teams!  
-tags: [sre, system, ]
+tags: [sre, system, alerting]
 author: VuNguyen
 ---
 
@@ -16,7 +16,7 @@ My boss and I have some discussions about: “How we can help another teams can 
 
 Back to my story. I think i have a good design to my Alertmanager system as my above idea, i will write up about it in another day, but most of problem related to Teams’s Workflow, Mobile push-notification, and I had some smart idea to improve it to better. It took away a lot of my joy over the past few days. I did get something back when I solved the problem though it felt like an unequal trade-off.
 
-![image.png](attachment:0b184b9b-03de-42f2-8305-0aa37660df78:image.png)
+![fucked workflow](/assets/img/ms_team_workflow.png)
 
 I can't believe this is how a message is created and sent in MS Teams. I don’t like C#, so I hate it, and I have no intent to learn it, although I must write some expressions to interact with data structure in this job, this isn’t problem with me.
 
