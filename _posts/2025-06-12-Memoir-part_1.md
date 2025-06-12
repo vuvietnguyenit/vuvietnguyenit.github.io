@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Part 1] Memoir of June 12, 2025
+title: Memoir of June 12, 2025
 subtitle: Goddamn MS Teams!  
 tags: [sre, system, ]
 author: VuNguyen
