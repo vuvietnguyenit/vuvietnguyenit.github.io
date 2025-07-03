@@ -103,10 +103,10 @@ root        4409  0.0  0.1   9736  2176 pts/0    S+   14:54   0:00 grep .py
 
 Because the OS will consider process will be killed by oom_score, the process has the highest oom_score will be killed first (so `victim.py`  will be killed first), and continue do the same until OS has free enough space. That is why we have many process was killed then.
 
-[OOM Status Flow](/assets/img/understand-html077.png)
+![OOM Status Flow](/assets/img/understand-html077.png)
 
 In real case (we met before), `keydb-server` is a important service we need to keep first, but maybe has another process triggered OOM (or even the `keydb-server` itself. Idk. But it wasn’t important because we need an evidence to show that) and `keydb-server` consume lot of memory too, but it can’t be easily killed.
 
 After all, I think we need something like catch syscall event (SIGKILL in this case, thinking a lot about **eBPF**), the data can be dump process usage in somewhere, this help us investigate what happened at that time.
 
-[OOM Killer](/assets/img/oom-killer.png)
+![OOM Killer](/assets/img/oom-killer.png)
