@@ -8,7 +8,7 @@ author: VuNguyen
 
 Recently, I tried to find some ways to monitor workload of GPU in Linux server to help detect issues when training AI models. I went to internet and find some opensource to help me do that because I don’t want to take a lot of time to build something from scratch 🙂. I’m lazy and always want to use my brain that think about anything beautiful, colorful in the world, not from computer 😌
 
-But almost I can’t find any opensource this can fit with my case, I found an exporter that might help me a little bit: https://github.com/utkuozdemir/nvidia_gpu_exporter. I read this opensource very carefully and realized that the implementation of code is basic (call cmd of nvidia-smi, get result and parse the result in Go code), that implementation works fine but not native and it can’t help me in trace problems in low-level function (malloc(), free() call, performance of train processes, bottlenecks or something like that).
+But almost I can’t find any opensource this can fit with my case, I found an exporter that might help me a little bit: [https://github.com/utkuozdemir/nvidia_gpu_exporter](https://github.com/utkuozdemir/nvidia_gpu_exporter). I read this opensource very carefully and realized that the implementation of code is basic (call cmd of nvidia-smi, get result and parse the result in Go code), that implementation works fine but not native and it can’t help me in trace problems in low-level function (malloc(), free() call, performance of train processes, bottlenecks or something like that).
 
 Because of all this, I very curious with how tools like nvidia-smi, nvtop can trace process’s resource usage. And when I checked it, both of them mapped with a shared library libnvidia-ml.so
 
@@ -43,7 +43,7 @@ root@gpu1:~# nm -D --defined-only /usr/lib/x86_64-linux-gnu/libnvidia-ml.so | he
 0000000000063e60 T nvmlDeviceDiscoverGpus
 ```
 
-And reference it with its documentation https://docs.nvidia.com/deploy/nvml-api/ to see how the function is used.
+And reference it with its documentation [https://docs.nvidia.com/deploy/nvml-api/](https://docs.nvidia.com/deploy/nvml-api/) to see how the function is used.
 
 Additionally, when jobs run on the GPU server, they make calls to the CUDA Runtime/Driver API to use GPU resources (memory, CPU, etc.) via the shared libraries `libcuda.so` and `libcudart.so`. You can list the functions defined in the library using `nm` as shown above, and refer to its documentation on the internet.
 
