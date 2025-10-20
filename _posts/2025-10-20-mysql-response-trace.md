@@ -5,6 +5,17 @@ subtitle: if we have very very large system, what the most efficient and perform
 tags: [sre, database, ebpf, linux, tracing]
 author: VuNguyen
 ---
+
+---
+
+## Ngày 20/10 chúc một nửa thế giới luôn xinh đẹp và tỏa sáng - như ánh đèn Bestlight trong mọi không gian! ✨
+
+![ktvu](/assets/img/vunv.jpg)
+
+Tặng chị em track/reel anh nghiện mấy tuần nay 😎🎶: https://www.tiktok.com/@doanhnhansena/video/7561723932211105031?lang=en 
+
+---
+
 Decrease MTTR (Mean Time To Response) is the most important when we do incident response (IR), it largely depends on the skills and knowledge of the engineers responsible for the system, the more experience and understanding they have, the faster they can resolve issues. But no one can understand all corners of system. Therefore, if we can provide clear insights that help any engineer quickly understand what is happening in the current situation, we can significantly reduce response time and save both time and cost for the organization.
 
 But, how can do that ? That is a very difficult question I thinking about recently, because we met some operate problems in our system, we will take many time to incident response when it happening. That problem is about our database cluster (MySQL) and backends connect to, we don't know what exactly backend connect to MySQL server, what response my database responsed to the backend when the users told that they can't access page A,B,C and we couldn't know how many components have been built in those pages. Just developer/product owner know about it, but how can we proactive it when something wrong happen ?
