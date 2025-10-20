@@ -1,6 +1,6 @@
 ---
 layout: post
-title: On-the-Fly MySQL Response Tracing
+title: On-the-Fly MySQL Response Tracing - Part 1
 subtitle: if we have very very large system, what the most efficient and performance way we can use to tracing what we want ?
 tags: [sre, database, ebpf, linux, tracing]
 author: VuNguyen
