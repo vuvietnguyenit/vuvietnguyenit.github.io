@@ -9,6 +9,10 @@ Decrease MTTR (Mean Time To Response) is the most important when we do incident 
 
 But, how can do that ? That is a very difficult question I thinking about recently, because we met some operate problems in our system, we will take many time to incident response when it happening. That problem is about our database cluster (MySQL) and backends connect to, we don't know what exactly backend connect to MySQL server, what response my database responsed to the backend when the users told that they can't access page A,B,C and we couldn't know how many components have been built in those pages. Just developer/product owner know about it, but how can we proactive it when something wrong happen ?
 
+Our MySQL cluster processes approximately 20,000 requests per second - a significant throughput level. Given that 1/3 of Vietnam’s population uses our product, performance considerations are absolutely critical.
+
+![MySQL throughput](/assets/img/mysql-grafana-res.png)
+
 Flow:
 
 ```text
