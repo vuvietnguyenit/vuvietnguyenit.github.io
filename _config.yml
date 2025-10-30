@@ -1,9 +1,9 @@
 # Site settings
 site: Ephesus
 title: VuNguyen's SRE Blog
-keywords: ephesus, blog
+keywords: ephesus, blog, sre, ebpf, linux, performance, reliability
 description: >-
-  Ephesus - Minimalist Jekyll Theme aaaaaaaaaaaaaaaaa
+  VuNguyen's SRE Blog
 lang: en-US
 timezone:  Asian/Ho_Chi_Minh
 repo: https://github.com/onepase/Ephesus # site repo [optional]
@@ -14,7 +14,7 @@ discus-identifier:  XXX
 # Author settings
 author:
   name: Vu Nguyen
-  bio: Site Reliability Engineer @CocCoc <br> Girl-holic <3 <br> BPF Developer /#linux
+  bio: Site Reliability Engineer @CocCoc <br> BPF Developer /#linux <br> Beautifully broken - Charming chaos
   picture: assets/images/avatar.jpg 
   github: vuvietnguyenit # github username
   linkedin: vunguyen1407 # linkedin username
