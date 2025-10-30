@@ -15,7 +15,7 @@ discus-identifier:  XXX
 author:
   name: Hakan Torun
   bio: Computer Engineer @pardinus <br> Founder @zaqa <br> Open Source /#linux
-  picture: assets/images/profile.jpg 
+  picture: assets/images/avatar.jpg 
   github: vuvietnguyenit # github username
   twitter: onepase # twitter username
   facebook: onepase # facebook username
@@ -26,7 +26,7 @@ author:
 
 
 # URL settings
-url: "vuvietnguyenit.github.io" # Domain Name of host. [username].github.io for github pages
+url: "https://vuvietnguyenit.github.io" # Domain Name of host. [username].github.io for github pages
 permalink: pretty
 
 markdown: kramdown
