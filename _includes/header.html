@@ -1,65 +1,33 @@
-{% assign date_format = site.date_format | default: "%B %-d, %Y" %}
-
-{% if page.cover-img %}
-  <div id="header-big-imgs" data-num-img={% if page.cover-img.first %}{{ page.cover-img.size }}{% else %}1{% endif %}
-    {% for bigimg in page.cover-img %}
-    {% assign imgnum = forloop.index %}
-    {% for imginfo in bigimg %}
-    {% if imginfo[0] %}
-      data-img-src-{{ imgnum }}="{{ imginfo[0] | absolute_url }}"
-      data-img-desc-{{ imgnum }}="{{ imginfo[1] }}"
-    {% else %}
-      data-img-src-{{ imgnum }}="{{ imginfo | absolute_url }}"
-    {% endif %}
-    {% endfor %}
-    {% endfor %}
-  ></div>
-{% endif %}
-
-<header class="header-section {% if page.cover-img %}has-img{% endif %}">
-<div class="intro-header {% if page.cover-img %} big-img {% endif %}">
-  {% if page.cover-img or page.title %}
-  <div class="container-md">
-    <div class="row">
-      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-        <div class="{{ include.type }}-heading">
-          <h1>{% if page.title %}{{ page.title | strip_html }}{% else %}<br/>{% endif %}</h1>
-          {% if page.subtitle %}
-            {% if include.type == "page" %}
-              <hr class="small">
-              <span class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</span>
-            {% else %}
-              <h2 class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</h2>
-            {% endif %}
-          {% endif %}
-          
-          {% if include.type == "post" %} 
-            {% if page.author %}
-              By <strong>{{ page.author | strip_html }}</strong><br>
-            {% endif%}
-            <span class="post-meta">Posted on {{ page.date | date: date_format }}</span>
-            {% if page.last-updated %}
-              <span class="post-meta">
-                <span class="d-none d-md-inline middot">&middot;</span>
-                Last updated {{ page.last-updated | date: date_format }}
-              </span>
-            {% endif %}
-            {% if page.readtime %}
-              {% include readtime.html %}
-            {% endif %}
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  </div>
-  {% endif %}
-  {% if page.cover-img %}<span class='img-desc'></span>{% endif %}
-</div>
-
-{% if page.header-extra %}
-  {% for file in page.header-extra %}
-    {% include {{ file }} %}
-  {% endfor %}
-{% endif %}
-
-</header>
+<!DOCTYPE html>
+<html lang="{{site.lang}}" data-theme="light">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{% if page.title %}{{page.title}} - {{site.title}}{% else %}{{site.title}}{% endif %}</title>
+		<meta name="description" content="{% if page.description %}{{page.description}}{% else %}{{site.description}}{% endif %}">
+		<meta name="keywords" content="{% if page.tags %}{{page.tags}}{% else %}{{site.keywords}}{% endif %}">
+		<base href="{{ site.url }}" />
+		{% if page.date %}
+    	<meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+    	<meta content="{{ site.url }}/about/" property="article:author">
+  		{% endif %}
+		<meta property="og:site_name" content="{{site.title}}">
+		<meta property="og:type" content="{% if page.title %}article{% else %}website{% endif %}" />
+		<meta property="og:url" content="{{ site.url }}{{page.url}}"/>
+		<meta property="og:title" content="{% if page.title %}{{page.title}} - {{site.title}}{% else %}{{site.title}}{% endif %}" />
+		<meta property="og:description" content="{% if page.description %}{{page.description}} {% else %}{{site.description}}{% endif %}" />
+		<meta property="og:image" content="{{ site.url }}/{% if page.image %}{{page.image}}{% else %}assets/images/favicon.png{% endif %}"/>
+		<meta name="twitter:card" content="summary"/>
+		<meta property="twitter:title" content="{% if page.title %}{{page.title}} - {{site.title}}{% else %}{{site.title}}{% endif %}" />
+		<meta property="twitter:description" content="{% if page.description %}{{page.description}} {% else %}{{site.description}}{% endif %}" />
+		<meta property="twitter:image" content="{{ site.url }}/{% if page.image %}{{page.image}}{% else %}assets/images/favicon.png{% endif %}" />
+		<link rel="stylesheet" href="assets/css/highlight.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="shortcut icon" href="assets/images/favicon.png" />
+		<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.url }}/atom.xml">
+		<link rel="alternate" type="application/json" title="{{ site.title }}" href="{{ site.url }}/feed.json" />
+		<link rel="sitemap" type="application/xml" title="sitemap" href="{{ site.url }}/sitemap.xml" />
+		<meta name="google-site-verification" content="{{site.google_verify}}" />
+	</head>
+<body>
