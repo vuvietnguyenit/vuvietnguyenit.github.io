@@ -12,7 +12,7 @@ I had this idea yesterday because I got a task about research error responses of
 
 But, maybe there are many problems when I want to implement more than one tool like this, it has similar codebase, directory structure, even function name. Copy project from one to another and rename it, logic is only changed in a function, blah blah ... All of these aren't always a good idea. At current time, I only have MySQL, Redis, but in the future it may have more (for example: Kafka, Postgres, MongoDB). Not to mention that if I need to add a function on all of these tool, I need to update in all of project, this obivously is nightmare.
 
-**I very very don't like to do the repeatable work**
+<b>I very very don't like to do the repeatable work</b>
 
 So, I created a new project with a new codebase (this project was renamed from old project, which has a name **mysql-error-echo**). Project link: <a href="https://github.com/vuvietnguyenit/packet-sniffing" style="color: blue">https://github.com/vuvietnguyenit/packet-sniffing</a>
 
