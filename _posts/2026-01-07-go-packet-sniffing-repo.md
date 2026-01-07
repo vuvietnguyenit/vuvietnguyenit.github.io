@@ -22,6 +22,6 @@ _Ah, in the <a style="color: blue" href="./2026-01-02-happy-new-year-2026.md">pr
 
 ![testing flow](/assets/images/Mermaid%20Chart%20-%20Create%20complex,%20visual%20diagrams%20with%20text.-2026-01-07-064011.png)
 
-I used two machine to test latency about Redis client -> server, send request from machine 1 and get response from machine 2. I put BCC (base on eBPF) latency measurement tool <a href="https://github.com/iovisor/bcc/blob/master/tools/tcpconnlat_example.txt", style="color: blue">tcpconnlat</a> on machine 1 to measure latency of "spammer" PID when enable/disable sniffer tool on machine 2 that I described in image above.
+I used two machine to test latency about Redis client -> server, send request from machine 1 and get response from machine 2. I put BCC (base on eBPF) latency measurement tool <a href="https://github.com/iovisor/bcc/blob/master/tools/tcpconnlat_example.txt" style="color: blue">tcpconnlat</a> on machine 1 to measure latency of "spammer" PID when enable/disable sniffer tool on machine 2 that I described in image above.
 
 And it give me a result: "**Latency didn't change when I enabled/disabled `sniffer` tool on machine 2**". If you can see "Something is wrong" in my testing idea, let's me know it. Thanks.
